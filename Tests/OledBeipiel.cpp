@@ -1,8 +1,3 @@
-void setPixels(uint8_t x, uint8_t y)
-{
-    u8g2.drawPixel(x, y);
-}
-
 #include <Arduino.h>
 #include <U8g2lib.h>
 
@@ -376,41 +371,44 @@ void draw(void)
     u8g2_prepare();
     switch (draw_state >> 3)
     {
-    case 0:
+    // case 0:
+    //     u8g2_box_frame(draw_state & 7);
+    //     break;
+    // case 1:
+    //     u8g2_disc_circle(draw_state & 7);
+    //     break;
+    // case 2:
+    //     u8g2_r_frame(draw_state & 7);
+    //     break;
+    // case 3:
+    //     u8g2_string(draw_state & 7);
+    //     break;
+    // case 4:
+    //     u8g2_line(draw_state & 7);
+    //     break;
+    // case 5:
+    //     u8g2_triangle(draw_state & 7);
+    //     break;
+    // case 6:
+    //     u8g2_ascii_1();
+    //     break;
+    // case 7:
+    //     u8g2_ascii_2();
+    //     break;
+    // case 8:
+    //     u8g2_extra_page(draw_state & 7);
+    //     break;
+    // case 9:
+    //     u8g2_bitmap_modes(0);
+    //     break;
+    // case 10:
+    //     u8g2_bitmap_modes(1);
+    //     break;
+    // case 11:
+    //     u8g2_bitmap_overlay(draw_state & 7);
+    //     break;
+    default:
         u8g2_box_frame(draw_state & 7);
-        break;
-    case 1:
-        u8g2_disc_circle(draw_state & 7);
-        break;
-    case 2:
-        u8g2_r_frame(draw_state & 7);
-        break;
-    case 3:
-        u8g2_string(draw_state & 7);
-        break;
-    case 4:
-        u8g2_line(draw_state & 7);
-        break;
-    case 5:
-        u8g2_triangle(draw_state & 7);
-        break;
-    case 6:
-        u8g2_ascii_1();
-        break;
-    case 7:
-        u8g2_ascii_2();
-        break;
-    case 8:
-        u8g2_extra_page(draw_state & 7);
-        break;
-    case 9:
-        u8g2_bitmap_modes(0);
-        break;
-    case 10:
-        u8g2_bitmap_modes(1);
-        break;
-    case 11:
-        u8g2_bitmap_overlay(draw_state & 7);
         break;
     }
 }
