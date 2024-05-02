@@ -1,14 +1,20 @@
+// Importieren der Library
 #include <Arduino.h>
 
+// Klasse definieren
 class MyAmpel
 {
 private:
+    // Pinplätze defin
     int redPin;
     int yellowPin;
     int greenPin;
 
 public:
-    MyAmpel(int redPin, int yellowPin, int greenPin)
+    MyAmpel() {}
+
+    // Methode um die Ampel zu initialisieren
+    void init(int redPin, int yellowPin, int greenPin)
     {
         this->redPin = redPin;
         this->yellowPin = yellowPin;
@@ -18,6 +24,7 @@ public:
         pinMode(greenPin, OUTPUT);
     }
 
+    // Methode um die rote LED einzuschalten
     void turnOnRed()
     {
         digitalWrite(redPin, HIGH);
@@ -25,6 +32,7 @@ public:
         digitalWrite(greenPin, LOW);
     }
 
+    // Methode um die gelbe LED einzuschalten
     void turnOnYellow()
     {
         digitalWrite(redPin, LOW);
@@ -32,6 +40,7 @@ public:
         digitalWrite(greenPin, LOW);
     }
 
+    // Methode um die grüne LED einzuschalten
     void turnOnGreen()
     {
         digitalWrite(redPin, LOW);
